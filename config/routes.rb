@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'faq/' => 'static_pages#faq', as: :faq
   get 'about/' => 'static_pages#about', as: :about
+  get 'compare/' => 'static_pages#compare', as: :compare
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
