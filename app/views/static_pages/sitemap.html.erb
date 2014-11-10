@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h1>Sitemap</h1>
+
+  <h4>Static pages<h4>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><%= link_to("About", about_path) %></li>
+    <li><%= link_to("FAQ", faq_path) %></li>
+    <li><%= link_to("Compare", compare_path) %></li>
+    <li><%= link_to("Sitemap", sitemap_path) %></li>
+  </ul>
+
+  <h4>Rankings</h4>
+  <ul>
+    <li>(Placeholder) Top 5</li>
+    <li>(Placeholder) Top 10</li>
+    <li>(Placeholder) Top 50</li>
+    <li>(Placeholder) Top 100</li>
+  </ul>
+  <h4>Categories</h4>
+  <ul>
+    <li><%= link_to("List of Categories", categories_path) %></li>
+    <% @categories.each do |category| %>
+    <li><%= link_to category.name, category %></li>
+    <% end %>
+  </ul>
+
+</div>

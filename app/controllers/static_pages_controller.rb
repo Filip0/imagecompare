@@ -20,8 +20,12 @@ class StaticPagesController < ApplicationController
 			rand2 = Image.offset(offset2).first
 		end
 
-		@image1 = Image.find(rand1);
-		@image2 = Image.find(rand2);
+		@image1 = Image.find(rand1)
+		@image2 = Image.find(rand2)
+	end
+
+	def sitemap
+		@categories = Category.all
 	end
 
 end

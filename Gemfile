@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
+require 'em/pure_ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'mysql2'
 gem 'devise'
 # Use SCSS for stylesheets
@@ -35,6 +35,15 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
+#tzinfo gem for time zone info
+gem 'tzinfo-data'
+#Event machine gem
+gem 'eventmachine', '~> 1.0.3'
+#Paginate gem
+gem 'will_paginate', '~> 3.0'
+#Paginate gem for bootstrap
+gem 'will_paginate-bootstrap'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'capistrano', '~> 3.1.0'
@@ -43,4 +52,3 @@ gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rvm'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
