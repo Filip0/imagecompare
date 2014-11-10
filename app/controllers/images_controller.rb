@@ -35,7 +35,7 @@ class ImagesController < ApplicationController
         format.json { render json: @image.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # PATCH/PUT /images/1
   # PATCH/PUT /images/1.json
@@ -59,6 +59,12 @@ class ImagesController < ApplicationController
       format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def top
+    @images = Image.order(upvotes: :desc).limit(3)
+
+
   end
 
   private

@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :categories
 
-  resources :images
+  resources :images do
+    collection do
+      get 'top', action: :top
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   get 'faq/' => 'static_pages#faq', as: :faq
   get 'about/' => 'static_pages#about', as: :about
   get 'compare/' => 'static_pages#compare', as: :compare
-   get 'update/' => 'static_pages#update', as: :update
+  get 'update/' => 'static_pages#update', as: :update
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
