@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028093902) do
+ActiveRecord::Schema.define(version: 20141028143639) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20141028093902) do
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.string   "filetype"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "img_id"
   end
 
   create_table "users", force: true do |t|
