@@ -44,3 +44,4 @@ gem 'capistrano-rvm'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry', 		group: :development

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028143639) do
+ActiveRecord::Schema.define(version: 20141110121108) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141028143639) do
 
   create_table "images", force: true do |t|
     t.string   "url"
-    t.integer  "upvotes"
+    t.integer  "upvotes",    default: 0
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
 	end
 
 	def compare
+		# Adds two different random images from the database to image1 and image2.
 		offset1 = rand(Image.count)
 		offset2 = rand(Image.count)
 
@@ -20,8 +21,18 @@ class StaticPagesController < ApplicationController
 			rand2 = Image.offset(offset2).first
 		end
 
-		@image1 = Image.find(rand1);
-		@image2 = Image.find(rand2);
+		@image1 = Image.find(rand1)
+		@image2 = Image.find(rand2)
+	end
+
+	def update
+		# Updates the upvotes for the image pressed
+		@image = Image.find(params[:id])
+		@image.upvotes += 1
+		@image.save
+		puts @image.upvotes
+
+		redirect_to(:compare)
 	end
 
 end
