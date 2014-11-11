@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028143639) do
+ActiveRecord::Schema.define(version: 20141110124731) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141028143639) do
 
   create_table "images", force: true do |t|
     t.string   "url"
-    t.integer  "upvotes"
+    t.integer  "upvotes",       default: 0
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,7 +35,18 @@ ActiveRecord::Schema.define(version: 20141028143639) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "img_id"
+    t.integer  "upvotes_count"
   end
+
+  create_table "upvotes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "upvotes", ["image_id"], name: "index_upvotes_on_image_id", using: :btree
+  add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

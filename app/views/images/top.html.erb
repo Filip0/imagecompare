@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="top-container">
+    <% @images.each do |image| %>
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <h2> Title: <%= image.title %></h2>
+          <%= image_tag(image.url, :class => "img-responsive") %> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

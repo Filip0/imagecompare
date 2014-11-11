@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show, :edit, :update, :destroy, :upvote]
 
   # GET /images
   # GET /images.json
@@ -59,6 +59,39 @@ class ImagesController < ApplicationController
       format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def top
+    @images = Image.order(upvotes: :desc).limit(5)
+
+  end
+
+  def upvote
+    upvote = Upvote.create(user: current_user, image: @image)
+    respond_to do |format|
+      if upvote.save
+        format.html {redirect_to(:compare)}
+      else
+        format.html {redirect_to(:compare, notice: 'Something went wrong, have you already voted for this image?')}
+      end
+    end
+
+  end
+
+  def compare
+    # Adds two different random images from the database to image1 and image2.
+    offset1 = rand(Image.count)
+    offset2 = rand(Image.count)
+
+    rand1 = Image.offset(offset1).first
+    rand2 = Image.offset(offset2).first
+    while rand1 == rand2 do
+      offset2 = rand(Image.count)
+      rand2 = Image.offset(offset2).first
+    end
+
+    @image1 = rand1
+    @image2 = rand2
   end
 
   private
