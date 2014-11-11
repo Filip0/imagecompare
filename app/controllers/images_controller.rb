@@ -62,8 +62,11 @@ class ImagesController < ApplicationController
   end
 
   def top
-    @images = Image.order(upvotes: :desc).limit(5)
-
+    if params[:top]
+      @images = Image.order(upvotes: :desc).limit(params[:top])
+    else
+      @images = Image.order(upvotes: :desc).limit(10)
+    end
   end
 
   def upvote

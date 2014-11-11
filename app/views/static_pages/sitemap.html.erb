@@ -12,10 +12,9 @@
 
   <h4>Rankings</h4>
   <ul>
-    <li>(Placeholder) Top 5</li>
-    <li>(Placeholder) Top 10</li>
-    <li>(Placeholder) Top 50</li>
-    <li>(Placeholder) Top 100</li>
+    <li><%= link_to("Top 5", top_images_path(top: 5)) %></li>
+    <li><%= link_to("Top 25", top_images_path(top: 25)) %></li>
+    <li><%= link_to("Top 50", top_images_path(top: 50)) %></li>
   </ul>
   <h4>Categories</h4>
   <ul>
