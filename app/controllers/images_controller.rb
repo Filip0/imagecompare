@@ -62,8 +62,7 @@ class ImagesController < ApplicationController
   end
 
   def top
-    @images = Image.order(upvotes: :desc).limit(5)
-
+    @images = Image.order(upvotes: :desc).limit()
   end
 
   def upvote
@@ -75,7 +74,6 @@ class ImagesController < ApplicationController
         format.html {redirect_to(:compare, notice: 'Something went wrong, have you already voted for this image?')}
       end
     end
-
   end
 
   def compare
