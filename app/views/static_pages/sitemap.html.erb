@@ -10,6 +10,12 @@
     <li><%= link_to("Sitemap", sitemap_path) %></li>
   </ul>
 
+  <h4>User handling<h4>
+  <ul>
+    <li><%= link_to("New User", new_user_session_path) %></li>
+    <li><%= link_to("Edit User", edit_user_registration_path) %></li>
+  </ul>
+
   <h4>Rankings</h4>
   <ul>
     <li><%= link_to("Top 5", top_images_path(top: 5)) %></li>
