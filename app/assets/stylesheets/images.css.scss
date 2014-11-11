@@ -5,3 +5,19 @@
 .top-container {
 	text-align: center;
 }
+
+.fav-image-div {
+	position: relative;
+}
+
+.fav-image-button {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	border-style: none;
+	background: none;
+}
+
+.fav-image-icon {
+	color: yellow;
+}
