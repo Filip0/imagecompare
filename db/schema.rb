@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141110124731) do
 
   create_table "images", force: true do |t|
     t.string   "url"
-    t.integer  "upvotes"
+    t.integer  "upvotes",       default: 0
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
