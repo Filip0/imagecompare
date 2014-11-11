@@ -35,6 +35,33 @@
             <li><%= link_to("Categories", categories_path) %></li>
             <li><%= link_to("Sitemap", sitemap_path) %></li>
           </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Signed in</a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li class="dropdown" id="menuLogin">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+                <div class="dropdown-menu" style="padding:17px;">
+                  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <%= f.email_field :email, autofocus: true, hide_label: true, placeholder: "Email" %>
+                        <%= f.password_field :password, autocomplete: "off",hide_label: true, placeholder: "Password" %>
+                      <% if devise_mapping.rememberable? -%>
+                        <%= f.check_box :remember_me %>
+                      <% end -%>
+
+                      <%= f.submit "Log in" %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>

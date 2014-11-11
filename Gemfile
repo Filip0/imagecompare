@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-require 'em/pure_ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2'
@@ -19,6 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Bootstrap forms
+gem 'bootstrap_form', '~> 2.2.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
 #gem 'jquery-turbolinks'
@@ -36,10 +37,6 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
-#tzinfo gem for time zone info
-gem 'tzinfo-data'
-#Event machine gem
-gem 'eventmachine', '~> 1.0.3'
 #Paginate gem
 gem 'will_paginate', '~> 3.0'
 #Paginate gem for bootstrap
