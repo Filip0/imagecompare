@@ -1,23 +1,7 @@
 <h1>Listing images</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h3><%= link_to("Compare images", compare_path) %></h3>
+<h3><%= link_to("Top 5", top_images_path(top: 5)) %></h3>
+<h3><%= link_to("Top 25", top_images_path(top: 25)) %></h3>
+<h3><%= link_to("Top 50", top_images_path(top: 50)) %></h3>
 
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Image', new_image_path %>

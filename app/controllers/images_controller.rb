@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :set_image, only: [:show, :upvote]
 
   # GET /images
   # GET /images.json
@@ -75,7 +75,13 @@ class ImagesController < ApplicationController
       if upvote.save
         format.html {redirect_to(:compare)}
       else
-        format.html {redirect_to(:compare, notice: 'Something went wrong, have you already voted for this image?')}
+        format.html {redirect_to(:compare, notice:
+          if user_signed_in?
+            'Something went wrong, have you already voted for this image?'
+          else
+            'You need to sign in to vote on images'
+          end
+          )}
       end
     end
   end
