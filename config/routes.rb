@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :favourites, only: [:index] do
+  resources :favourites, only: [:index, :destroy] do
     collection do
       get 'favourite'
     end

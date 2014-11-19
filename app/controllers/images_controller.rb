@@ -62,6 +62,7 @@ class ImagesController < ApplicationController
   end
 
   def top
+    @favourites = Favourite.where(user: current_user)
     if params[:top]
       @images = Image.order(upvotes: :desc).limit(params[:top])
     else

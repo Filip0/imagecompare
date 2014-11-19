@@ -1,1 +1,8 @@
-alert("page has loaded!");
+var el = $('#span-<%= @favourite.image_id %>')
+if (el.hasClass('glyphicon-star-empty')) {
+	el.removeClass('glyphicon-star-empty');
+	el.addClass('glyphicon-star');
+} else {
+	el.removeClass('glyphicon-star');
+	el.addClass('glyphicon-star-empty');
+}
