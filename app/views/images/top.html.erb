@@ -7,9 +7,9 @@
             <div class="fav-image-div">
               <%= image_tag(image.url, :class => "img-responsive") %>
               <!-- favorite button-->
-              <button class="btn btn-lg fav-image-button"> 
-                <span class="fav-image-icon glyphicon glyphicon-star-empty"></span> 
-              </button>
+              <%= link_to(favourite_favourites_path(id: image.id), remote: true, id: image.id, class: "btn btn-lg fav-image-button") do %>
+                <span class="fav-image-icon glyphicon glyphicon-star-empty"></span>
+              <% end %>
               <!-- fav end -->
             </div>
         </div>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :favourites, only: [:index] do
+    collection do
+      get 'favourite'
+    end
+  end
+
   devise_for :users
   resources :categories, only: [:index, :show]
 

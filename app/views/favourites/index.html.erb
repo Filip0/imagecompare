@@ -1,0 +1,23 @@
+<h1>Listing favourites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favourites.each do |favourite| %>
+      <tr>
+        <td><%= favourite.user_id %></td>
+        <td><%= favourite.image_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
