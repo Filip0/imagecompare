@@ -7,21 +7,23 @@
       <h2><%= @image2.title %></h2>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="fav-image-div">
-        <%= link_to image_tag(@image1.url, :class => "img-responsive"), :action => 'upvote', :controller => 'images', id: @image1 %>
-        <button class="btn btn-lg fav-image-button"> 
-          <span class="fav-image-icon glyphicon glyphicon-star-empty"></span> 
-        </button>
+  <div class="compare-row-height">
+    <div class="row">
+      <div class="col-md-6 image-border-right">
+        <div class="fav-image-div">
+          <%= link_to image_tag(@image1.url, :class => "img-responsive"), :action => 'upvote', :controller => 'images', id: @image1 %>
+          <button class="btn btn-lg fav-image-button"> 
+            <span class="fav-image-icon glyphicon glyphicon-star-empty"></span> 
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="fav-image-div">
-        <%= link_to image_tag(@image2.url, :class => "img-responsive"), :action => 'upvote', :controller => 'images', id: @image2 %>
-        <button class="btn btn-lg fav-image-button"> 
-          <span class="fav-image-icon glyphicon glyphicon-star-empty"></span> 
-        </button>
+      <div class="col-md-6">
+        <div class="fav-image-div">
+          <%= link_to image_tag(@image2.url, :class => "img-responsive"), :action => 'upvote', :controller => 'images', id: @image2 %>
+          <button class="btn btn-lg fav-image-button"> 
+            <span class="fav-image-icon glyphicon glyphicon-star-empty"></span> 
+          </button>
+        </div>
       </div>
     </div>
   </div>
