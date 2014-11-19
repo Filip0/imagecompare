@@ -76,13 +76,12 @@ class ImagesController < ApplicationController
       if upvote.save
         format.html {redirect_to(:compare)}
       else
-        format.html {redirect_to(:compare, notice:
-          if user_signed_in?
-            'Something went wrong, have you already voted for this image?'
-          else
-            'You need to sign in to vote on images'
-          end
-          )}
+        if user_signed_in?
+          notice = 'Something went wrong, have you already voted for this image?'
+        else
+          notice = 'You need to sign in to vote on images'
+        end
+        format.html {redirect_to(:compare, notice: notice)}
       end
     end
   end
