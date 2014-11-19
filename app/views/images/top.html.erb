@@ -4,14 +4,23 @@
       <div class="row">
         <div class="col-md-offset-4 col-md-4 image-border-bottom">
           <h2> <%= image.title %></h2>
+            <% if user_signed_in? %>
             <div class="fav-image-div">
               <%= image_tag(image.url, :class => "img-responsive") %>
               <!-- favorite button-->
-              <button class="btn btn-lg fav-image-button"> 
-                <span class="fav-image-icon glyphicon glyphicon-star-empty"></span>
-              </button>
+              <%= link_to(favourite_favourites_path(id: image.id), remote: true, id: image.id, class: "btn btn-lg fav-image-button") do %>
+                <span id="span-<%= image.id %>" class="fav-image-icon glyphicon
+                <% if @favourites.exists?(image: image) %>
+                glyphicon-star
+                <% else %>
+                glyphicon-star-empty
+                <% end %>
+                ">
+                </span>
+              <% end %>
               <!-- fav end -->
             </div>
+            <% end %>
         </div>
       </div>
     <% end %>

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :categories
+  resources :favourites, only: [:index, :destroy] do
+    collection do
+      get 'favourite'
+    end
+  end
 
-  resources :images do
+  devise_for :users
+  resources :categories, only: [:index, :show]
+
+  resources :images, only: [:index, :show] do
     collection do
       get 'top', action: :top
       get 'upvote', action: :upvote

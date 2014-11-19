@@ -1,0 +1,21 @@
+<h1>Listing favourites</h1>
+  <%= will_paginate @favourites,renderer: BootstrapPagination::Rails %>
+  <table>
+    <tbody>
+      <% @favourites.each do |favourite| %>
+        <tr>
+          <td><h4><%= favourite.image.title %></h4></td>
+        </tr>
+        <tr>
+          <td><%= link_to image_tag(favourite.image.scale, :class => "img-responsive"), favourite.image.url %></td>
+        </tr>
+        <tr>
+          <td><%= link_to 'Unfavourite', favourite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @favourites,renderer: BootstrapPagination::Rails %>
+
+<br>
+
