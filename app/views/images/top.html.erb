@@ -2,7 +2,7 @@
   <div class="top-container">
     <% @images.each do |image| %>
       <div class="row">
-        <div class="col-md-offset-4 col-md-4">
+        <div class="col-md-offset-4 col-md-4 image-border-bottom">
           <h2> <%= image.title %></h2>
             <% if user_signed_in? %>
             <div class="fav-image-div">
