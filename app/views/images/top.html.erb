@@ -3,7 +3,7 @@
     <% @images.each do |image| %>
       <div class="row">
         <div class="col-md-offset-4 col-md-4">
-          <h2> Title: <%= image.title %></h2>
+          <h2> <%= image.title %></h2>
             <div class="fav-image-div">
               <%= image_tag(image.url, :class => "img-responsive") %>
               <!-- favorite button-->
