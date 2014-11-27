@@ -1,3 +1,23 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h4 {
+  font-size:150%;
+}
+
+p {
+  font-size:130%;
+}
+
+.text-box{
+  border-bottom-width:2px;
+  border-bottom-style:solid;
+  border-top-width:2px;
+  border-top-style:solid;
+  border-color:rgb(210,210,255);
+  padding-left:10px;
+  background-color:rgb(245,245,255);
+  margin-bottom:5px;
+}
